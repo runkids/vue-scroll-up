@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button class='toTop' v-if="!isTop" @click="scrollToTop();"></button>
+    <button class='vue-scroll-up' v-if="!isTop" @click="scrollToTop"></button>
   </div>
 </template>
 
@@ -57,7 +57,7 @@ export default {
 </script>
 
 <style>
-  .toTop {
+  .vue-scroll-up {
   z-index: 99;
   height: 55px;
   width: 55px;
@@ -71,7 +71,7 @@ export default {
   cursor: pointer;
   outline: 0;
 }
-.toTop::after {
+.vue-scroll-up::after {
   content: '';
   display: block;
   width: 10px;
@@ -80,7 +80,7 @@ export default {
   border-radius: 10px;
   margin: 0 auto;
 }
-.toTop::before {
+.vue-scroll-up::before {
   content: '';
   display: block;
   width: 0px;
@@ -102,7 +102,7 @@ export default {
   }
 }
 @media screen and (max-width: 450px) {
-  .toTop {
+  .vue-scroll-up {
     bottom: 10px;
     transform: translateX(5px) scale(0.7);
   }

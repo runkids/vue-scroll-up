@@ -7,7 +7,8 @@ Get from npm:
 ```js
 npm i vue-scroll-up
 ```
-And use this inside your app:
+## Usage
+Use this inside your app:
 ``` js
 import ScrollUp from 'vue-scroll-up'
 
@@ -19,7 +20,7 @@ export default {
 }
 ```
 
-And if you want to use from browser, simply :
+If you want to use from browser, simply :
 ```js
 <script src='./vue-scroll-up.js'></script>
 ```
@@ -28,16 +29,17 @@ And if you want to use from browser, simply :
 ```js
 import 'vue-scroll-up/dist/style.css'
 ```
-## Usage
-Example:
+The scroll button class name is `vue-scroll-up`
+
+##### HTML
 ```html
-<scroll-up :scrollDuration="1000" :scrollY="250"></scroll-up>
+<ScrollUp :scroll-duration="1000" scroll-y="250"/>
 ```
 
 ## Props
 
-`scrollDuration` : Page to top speed
+| Props Name  |  Type |  Default Value |  Info |
+| ------------ | ------------ | ------------ | ------------ |
+|scroll-duration  |  Number  |  1000  | Page to top speed.|
+| scroll-y  |  Number  |  250    | Show button when scrollY equals a number.|
 
-`scrollY` : Show button when scrollY equals a number
-
-Note: All props type is Number
