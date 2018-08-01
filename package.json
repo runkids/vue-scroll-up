@@ -1,6 +1,6 @@
 {
   "name": "vue-scroll-up",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A Vue.js component to top of the page",
   "main": "dist/vue-scroll-up.js",
   "scripts": {
