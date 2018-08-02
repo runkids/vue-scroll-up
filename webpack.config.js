@@ -34,7 +34,7 @@ const webpackConfig = {
         filename: 'vue-scroll-up.js',  //檔案輸出名稱
         path: path.resolve(__dirname, 'dist'), //檔案輸出路徑
         publicPath: '/dist/', //server路徑
-        library: 'CountTo',
+        library: 'VueScrollUp',
         libraryTarget: 'umd',
         umdNamedDefine: true
     },
