@@ -43,7 +43,7 @@ The scroll button class name is `vue-scroll-up`
 
 ##### HTML
 ```html
-<scroll-up :scroll-duration="1000" scroll-y="250"></scroll-up>
+<scroll-up :scroll-duration="1000" :scroll-y="250"></scroll-up>
 ```
 
 ## Props
