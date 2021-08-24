@@ -29,7 +29,10 @@ export default {
       let vm = this;
       function step(newTimestamp) {
         scrollCount += Math.PI / (vm.scrollDuration / (newTimestamp - oldTimestamp));
-        if (scrollCount >= Math.PI) window.scrollTo(0, 0);
+        if (scrollCount >= Math.PI) {
+          window.scrollTo(0, 0);
+          return;
+        }
         if (window.scrollY === 0) return;
         window.scrollTo(0, Math.round(cosParameter + (cosParameter * Math.cos(scrollCount))));
         oldTimestamp = newTimestamp;
