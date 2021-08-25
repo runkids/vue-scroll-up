@@ -44,8 +44,8 @@ const webpackConfig = {
     resolve: {
         extensions: ['.js', '.vue', '.json', '.css', '.scss'], //當我們使用 import 或 require 不帶副檔名時
         alias: {
-          'vue':'vue/dist/vue.js',//指定 vue 對應使用的真實 js 檔案
-          '@': path.resolve(__dirname, 'src'),
+            'vue':'vue/dist/vue.js',//指定 vue 對應使用的真實 js 檔案
+            '@': path.resolve(__dirname, 'src'),
         }
     },
     module: {
