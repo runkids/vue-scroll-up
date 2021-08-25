@@ -1,5 +1,5 @@
 # vue-scroll-up 
-[![vue3](https://img.shields.io/badge/vue-3.x-brightgreen.svg)](https://vuejs.org/) [![npm](https://img.shields.io/npm/v/vue-scroll-up.svg)](https://www.npmjs.com/package/vue-scroll-up) [![npm](https://img.shields.io/npm/dt/vue-scroll-up.svg)](https://www.npmjs.com/package/vue-scroll-up) [![npm](https://img.shields.io/npm/l/vue-scroll-up.svg)](https://github.com/runkids/Vue-Scroll-Up/blob/master/LICENSE)
+[![vue3](https://img.shields.io/badge/vue-3.x-brightgreen.svg)](https://vuejs.org/) [![npm](https://img.shields.io/npm/v/vue-scroll-up.svg)](https://www.npmjs.com/package/vue-scroll-up)  [![Version](https://img.shields.io/npm/v/vue-scroll-up/next.svg)](https://www.npmjs.com/package/vue-scroll-up) [![npm](https://img.shields.io/npm/dt/vue-scroll-up.svg)](https://www.npmjs.com/package/vue-scroll-up) [![npm](https://img.shields.io/npm/l/vue-scroll-up.svg)](https://github.com/runkids/Vue-Scroll-Up/blob/master/LICENSE)
 
 > Scroll up component for Vue 3.
 
@@ -8,10 +8,10 @@
 ## Installation 
 Get from npm / yarn:
 ```js
-npm i vue-scroll-up
+npm i vue-scroll-up@next
 ```
 ```js
-yarn add vue-scroll-up
+yarn add vue-scroll-up@next
 ```
 [👉  Vue 2 version check here](https://github.com/runkids/vue-scroll-up/tree/master/VUE2_README.md)
 
