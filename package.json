@@ -1,15 +1,29 @@
 {
   "name": "vue-scroll-up",
-  "version": "1.1.0",
-  "description": "A Vue.js component to top of the page",
+  "version": "2.0.0",
+  "description": "A Vue 3 component scroll to top of the page",
   "main": "dist/vue-scroll-up.js",
+  "module": "dist/vue-scroll-up.esm.js",
+  "types": "types/index.d.ts",
+  "files": [
+    "dist",
+    "types"
+  ],
   "scripts": {
-    "start": "npm run dev",
-    "dev": "webpack-dev-server --hot --inline -d --config webpack.config.js",
-    "build": "NODE_ENV=production webpack -p --config webpack.config.js"
+    "build": "rollup -c --environment BUILD:production",
+    "clean": "del-cli dist",
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:css": "stylelint **/*.{css,scss,html,vue,md} --fix",
+    "lint:js": "eslint . --ext .js,.ts,.vue --fix",
+    "prepare": "husky install",
+    "release": "npm run clean && npm run lint && npm run build",
+    "serve": "webpack serve --hot --open",
+    "start": "npm run serve"
   },
   "keywords": [
     "vue",
+    "vue3",
+    "vue-component",
     "scroll",
     "vue-plugin"
   ],
@@ -17,35 +31,85 @@
     "type": "git",
     "url": "git+https://github.com/runkids/Vue-Scroll-Up.git"
   },
-  "author": "runkids <egg358358@gmail.com>",
+  "author": "runkids (egg358358@gmail.com)",
   "license": "MIT",
-  "dependencies": {
-    "vue": "^2.5.17"
-  },
+  "bugs": "https://github.com/runkids/vue-scroll-up/issues",
+  "homepage": "https://github.com/runkids/vue-scroll-up",
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.4",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-latest": "^6.24.1",
-    "babel-preset-stage-2": "^6.24.1",
-    "copy-webpack-plugin": "^4.5.1",
-    "css-loader": "^0.28.11",
-    "extract-text-webpack-plugin": "^4.0.0-beta.0",
-    "file-loader": "^1.1.11",
-    "html-webpack-plugin": "^3.2.0",
-    "node-sass": "^4.8.3",
-    "postcss-loader": "^2.1.3",
-    "sass-loader": "^7.1.0",
-    "style-loader": "^0.20.3",
-    "uglifyjs-webpack-plugin": "^1.2.4",
-    "url-loader": "^1.0.1",
-    "vue-loader": "^14.2.2",
-    "vue-style-loader": "^4.1.0",
-    "vue-template-compiler": "^2.5.17",
-    "webpack": "^4.5.0",
-    "webpack-cli": "^3.1.1",
-    "webpack-dev-server": "^3.1.3"
+    "@babel/core": "^7.14.5",
+    "@babel/preset-env": "^7.14.5",
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "@types/jest": "^26.0.23",
+    "@typescript-eslint/eslint-plugin": "^4.26.1",
+    "@typescript-eslint/parser": "^4.26.1",
+    "@vue/compiler-sfc": "^3.2.6",
+    "@vue/test-utils": "^2.0.0-rc.6",
+    "babel-jest": "^26.6.3",
+    "babel-loader": "^8.2.2",
+    "change-case": "^4.1.2",
+    "css-loader": "^5.2.6",
+    "del-cli": "^3.0.1",
+    "eslint": "^7.28.0",
+    "eslint-config-airbnb-typescript": "^12.3.1",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-vue": "^7.11.0",
+    "html-webpack-plugin": "^5.3.1",
+    "husky": "^6.0.0",
+    "jest": "^26.6.3",
+    "lint-staged": "^11.0.0",
+    "markdown-to-vue-loader": "^3.1.0",
+    "mini-css-extract-plugin": "^1.6.0",
+    "postcss": "^8.3.2",
+    "rollup": "^2.51.2",
+    "rollup-plugin-postcss": "^4.0.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "rollup-plugin-vue": "^6.0.0",
+    "sass": "^1.34.1",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^2.0.0",
+    "stylelint": "^13.13.1",
+    "stylelint-config-recommended-scss": "^4.2.0",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.19.0",
+    "ts-jest": "^26.5.1",
+    "ts-loader": "^9.2.3",
+    "tslib": "^2.3.0",
+    "typescript": "^4.3.2",
+    "vue": "^3.2.6",
+    "vue-jest": "^5.0.0-alpha.10",
+    "vue-loader": "^16.1.1",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "next"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 1%",
+    "not dead"
+  ],
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{css,scss,html,vue,md}": [
+      "stylelint --fix",
+      "git add"
+    ]
   }
 }
